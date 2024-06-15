@@ -13,6 +13,7 @@ const BookList = ({ onEdit, onDelete }) => {
 
   return (
     <div className="book-list">
+      <h1 style={{ textAlign: 'center', fontSize: '50px' }}><b>List of Books</b></h1>
       {books.map(book => (
         <div key={book._id} className="book-item">
           <div className="book-title">{book.title}</div>
@@ -20,8 +21,8 @@ const BookList = ({ onEdit, onDelete }) => {
             <p>Author: {book.author}</p>
             <p>Year: {book.year}</p>
             <p>Genre: {book.genre}</p>
-            <button value="edit" onClick={() => onEdit(book)}>Edit</button>
-            <button value="delete" onClick={() => onDelete(book._id)}>Delete</button>
+            <button className="edit-button" onClick={() => onEdit(book)}>Edit</button>
+            <button className="delete-button" onClick={() => onDelete(book._id)}>Delete</button>
           </div>
         </div>
       ))}
@@ -30,3 +31,4 @@ const BookList = ({ onEdit, onDelete }) => {
 };
 
 export default BookList;
+

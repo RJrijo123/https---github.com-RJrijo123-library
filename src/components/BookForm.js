@@ -34,6 +34,7 @@ const BookForm = ({ bookToEdit, onSave, onCancel }) => {
 
   return (
     <form className="form-container" onSubmit={handleSubmit}>
+        <h1 style={{ color: 'green'}}>ADD NEW BOOK</h1>
       <div>
         <label>Title</label>
         <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} required />

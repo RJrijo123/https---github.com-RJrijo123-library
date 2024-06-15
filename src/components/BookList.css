@@ -1,69 +1,60 @@
 
 .book-list {
-    margin-top: 20px;
+    background-color: #f4f4f9;
     padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: auto;
+    margin-top: 20px;
+  }
+  
+  .book-list h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
   }
   
   .book-item {
-    padding: 10px;
-    margin-bottom: 10px;
     background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .book-item:hover {
-    box-shadow: 0 0 8px rgba(0,0,0,0.1);
-  }
-  
-  .book-details {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
   }
   
   .book-title {
-    font-weight: bold;
     font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
   }
   
-  .book-author {
-    color: #666;
-    font-size: 14px;
+  .book-details p {
+    margin: 5px 0;
   }
   
-  .book-actions {
-    margin-top: 10px;
-  }
-  
-   button {
-    margin-right: 10px;
+  button {
     padding: 8px 12px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    margin-right: 10px;
   }
   
-   button.delete {
+  .edit-button {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .edit-button:hover {
+    background-color: #45a049;
+  }
+  
+  .delete-button {
     background-color: #f44336;
     color: white;
   }
   
-   button.delete:hover {
-    background-color: #da190b;
-  }
-  
-   button.edit {
-    background-color: #2196F3;
-    color: white;
-  }
-  
-   button.edit:hover {
-    background-color: #0b7dda;
+  .delete-button:hover {
+    background-color: #d32f2f;
   }
   

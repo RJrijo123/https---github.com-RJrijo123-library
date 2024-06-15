@@ -32,9 +32,10 @@ const App = () => {
 
   return (
     <div>
-      <h1>Library App</h1>
-      <BookList onEdit={handleEdit} onDelete={handleDelete} />
+      <h1 style={{fontSize: '70px', color: 'gray'}}>LIBRARY</h1>
       <BookForm bookToEdit={bookToEdit} onSave={handleSave} onCancel={handleCancel} />
+      <BookList onEdit={handleEdit} onDelete={handleDelete} />
+      
     </div>
   );
 };
