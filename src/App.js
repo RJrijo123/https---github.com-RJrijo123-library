@@ -1,25 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import BookList from './components/BookList';
+import BookForm from './components/BookForm';
+import axios from 'axios';
 
-function App() {
+const App = () => {
+  const [bookToEdit, setBookToEdit] = useState(null);
+  const [books, setBooks] = useState([]);
+
+  const handleEdit = (book) => {
+    setBookToEdit(book);
+  };
+
+  const handleSave = (savedBook) => {
+    if (bookToEdit) {
+      setBooks(books.map(book => (book._id === savedBook._id ? savedBook : book)));
+    } else {
+      setBooks([...books, savedBook]);
+    }
+    setBookToEdit(null);
+  };
+
+  const handleDelete = (id) => {
+    axios.delete(`http://localhost:5000/api/books/${id}`)
+      .then(() => setBooks(books.filter(book => book._id !== id)))
+      .catch(error => console.error('Error deleting book:', error));
+  };
+
+  const handleCancel = () => {
+    setBookToEdit(null);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Library App</h1>
+      <BookList onEdit={handleEdit} onDelete={handleDelete} />
+      <BookForm bookToEdit={bookToEdit} onSave={handleSave} onCancel={handleCancel} />
     </div>
   );
-}
+};
 
 export default App;
